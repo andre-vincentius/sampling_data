@@ -2,7 +2,7 @@
 
 link="https://github.com/labusiam/dataset/raw/main/weather_data.xlsx"
 
-if [ -d "./data" ]
+if [ -d "./data/" ]
 then
 	wget -P "./data/" $link
 else
@@ -17,4 +17,4 @@ csvstack "./data/weather_2014.csv" "./data/weather_2015.csv" > "./data/weather.c
 
 rm "./data/weather_data.xlsx"
 
-cat "./data/weather.csv" | sample -r 0.3 > sample_weather.csv!
+cat "./data/weather.csv" | sample -r 0.3 > sample_weather.csv
